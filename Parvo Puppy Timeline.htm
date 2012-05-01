@@ -2,57 +2,7 @@
 <html>
 	<head>
 		<title>Parvo Program | Austin Pets Alive!</title>
-		<!-- CSS RESET SCRIPT -->
-			<style type="text/css">
-				/* http://meyerweb.com/eric/tools/css/reset/ 
-				   v2.0 | 20110126
-				   License: none (public domain)
-				*/
-
-				html, body, div, span, applet, object, iframe,
-				h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-				a, abbr, acronym, address, big, cite, code,
-				del, dfn, em, img, ins, kbd, q, s, samp,
-				small, strike, strong, sub, sup, tt, var,
-				b, u, i, center,
-				dl, dt, dd, ol, ul, li,
-				fieldset, form, label, legend,
-				table, caption, tbody, tfoot, thead, tr, th, td,
-				article, aside, canvas, details, embed, 
-				figure, figcaption, footer, header, hgroup, 
-				menu, nav, output, ruby, section, summary,
-				time, mark, audio, video {
-					margin: 0;
-					padding: 0;
-					border: 0;
-					font-size: 100%;
-					font: inherit;
-					vertical-align: baseline;
-				}
-				/* HTML5 display-role reset for older browsers */
-				article, aside, details, figcaption, figure, 
-				footer, header, hgroup, menu, nav, section {
-					display: block;
-				}
-				body {
-					line-height: 1;
-				}
-				ol, ul {
-					list-style: none;
-				}
-				blockquote, q {
-					quotes: none;
-				}
-				blockquote:before, blockquote:after,
-				q:before, q:after {
-					content: '';
-					content: none;
-				}
-				table {
-					border-collapse: collapse;
-					border-spacing: 0;
-				}
-			</style>
+		
 		<!-- META -->
 			<meta charset="UTF-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -70,124 +20,18 @@
 			
 		<!-- STYLING -->
 			<link rel="stylesheet" type="text/css" media="all" href="./css/style.css">
-			<style type="text/css">
-				#parvo_monitor_title_div
-				{
-					margin: 0 0 0 170px;
-					font-family: Georgia,serif;
-					font-size: 1.836363636em;
-					text-transform: lowercase;
-					color: #EDF3D6;
-					line-height: 59px;
-					padding: 0 11px;
-				}
-				#banner_dark
-				{
-					width:70em;
-					height:24.4em;
-					border-top:3.5em solid transparent;
-					z-index: 1;
-				}
-				#parvo_monitor_content
-				{
-					width: 70em;
-					padding:2em 0; 
-					float: left;
-					color: #EDF3D6;
-				}
-				#parvo_monitor_header
-				{
-					background-color: #646464;
-				}
-				#bg_div
-				{
-					position: absolute;
-					top: 3.5em;
-					margin-left: 10px;
-					margin-right: 10px;
-					width: 980px;
-					height: 200%;
-					background-color: #4D4D4D;
-					z-index: -1;
-				}
-			</style>
+			<link rel="stylesheet" type="text/css" media="all" href="./css/parvo_monitor_style.css">
 			
 		<!-- MISC -->
 			<script type="text/javascript" src="./js/jquery.min.js"></script>
 			<link rel="shortcut icon" href="http://www.austinpetsalive.org/favicon.ico">
 			
 		<!-- PAGE SCROLL ANIMATION -->
-			<script>
-				$(function(){
-					function filterPath(string){
-						return string
-						.replace(/^\//,'')
-						.replace(/(index|default).[a-zA-Z]{3,4}$/,'')
-						.replace(/\/$/,'');
-					}
-					var locationPath = filterPath(location.pathname);
-					var scrollElem = scrollableElement('html','body');
-					// Any links with hash tags in them (can't do ^= because of fully qualified URL potential)
-					$('a[href*=#]').each(function(){
-						// Ensure it's a same-page link
-						var thisPath = filterPath(this.pathname)||locationPath;
-						if(locationPath==thisPath&&(location.hostname==this.hostname||!this.hostname)&&this.hash.replace(/#/,'')){
-							// Ensure target exists
-							var $target = $(this.hash), target = this.hash;
-							if (target){
-								// Find location of target
-								var targetOffset = $target.offset().top;
-								$(this).click(function(event){
-									// Prevent jump-down
-									event.preventDefault();
-									// Animate to target
-									$(scrollElem).animate({scrollTop: targetOffset}, 400, function(){
-										// Set hash in URL after animation successful
-										location.hash = target;
-									});
-								});
-							}
-						}
-					});
-					// Use the first element that is "scrollable"  (cross-browser fix?)
-					function scrollableElement(els){
-						for(var i = 0, argLength = arguments.length; i <argLength; i++){
-							var el = arguments[i], 
-							$scrollElement = $(el);
-							if($scrollElement.scrollTop()>0)
-								return el;
-							else{
-								$scrollElement.scrollTop(1);
-								var isScrollable = $scrollElement.scrollTop()>0;
-								$scrollElement.scrollTop(0);
-								if(isScrollable)
-									return el;
-							}
-						}
-						return [];
-					}
-				});
-			</script>
-			<!-- Fade Transitions -->
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$("body").css("display", "none");
-					$("body").fadeIn(2000);
-					$("a.transition").click(function(event){
-						event.preventDefault();
-						linkLocation = this.href;
-						$("body").fadeOut(1000, redirectPage);
-					});
-					function redirectPage(){
-						window.location = linkLocation;
-					}
-				});
-			</script>
-			<!-- Set Background Height -->
-			<script type="text/javascript">
-				$(function(){$('#bg_div').css({'height':'650px'})});
-				$(function(){$('#sidebar_left').css({'height':'450px'})});
-			</script>
+			<script type="text/javascript" src="./js/page-scroll-animation.js"></script>
+			
+		<!-- Fade Transitions -->
+			<script type="text/javascript" src="./js/fade-transitions.js"></script>
+
 		<!-- STATS SCRIPTING -->
 			<link rel="stylesheet" href="css/aristo/jquery-ui-1.8.5.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
 			<link rel="stylesheet" href="js/timeglider/Timeglider.css" type="text/css" media="screen" title="no title" charset="utf-8">
@@ -250,19 +94,11 @@
 	</head>
 
 	<div id="top" style="position: absolute; top: 0px;"></div>
-	<div id="bg_div"></div>
+	<div id="bg_div" style="height: 650px;"></div>
 	
 	<body id="parvo-program" class="page page-id-14394 page-child parent-pageid-14392 page-template page-template-template-programs-php" bgcolor="#333333" style="height: 100%; width: 1000px; margin: 0 auto;">
 		<header class="body" id="parvo_monitor_header">
-			<h1 id="logo">
-				<a href="http://www.austinpetsalive.org/" title="Austin Pets Alive!">
-					<img src="./images/logo_apa.png" alt="Austin Pets Alive!">
-				</a>
-			</h1>
-			
-			<div id="parvo_monitor_title_div">
-				Parvo Puppy Status Monitor
-			</div>
+			<script src="./js/parvo-monitor-header.js"></script>
 		</header><!-- /header.body -->
 
 		<div id="main">
@@ -460,42 +296,13 @@
 				</div><!-- #content -->
 			</div><!-- #container -->
 
-			<div id="sidebar_left" class="sidebar" style="border-right: solid 1px #EDF3D6;">
-				<h4>Monitor Elements</h4>
-				<ul>
-					<li class="page_item"><a href="index.htm" class="transition" title="Introduction">Introduction</li>
-					<li class="page_item"><a href="Parvo Webcam.htm" class="transition" title="Parvo Webcam">Parvo Ward Webcam</a></li>
-					<li class="page_item"><a href="Parvo Puppy Timeline.htm" class="transition" title="Parvo Puppy Timeline">Parvo Puppy Timeline</a></li>
-				</ul>
+			<div id="sidebar_left" class="sidebar" style="border-right: solid 1px #EDF3D6; height: 425px;">
+				<script src="./js/sidebar.js"></script>
 			</div><!-- /#sidebar_left -->
 		</div><!-- /#main -->
 
-		<footer>
-			<div class="footerwrap">
-				<p class="copy">Copyright ©2012 <a href="http://www.austinpetsalive.org/" title="Austin Pets Alive!" class="url fn org" rel="home">Austin Pets Alive!</a>. All Rights Reserved.</p>
-				
-				<div class="vcard">
-					<span class="adr">
-						<span class="street-address">2807 Manchaca Road</span>, 
-						<span class="locality">Austin</span>, 
-						<abbr title="Texas" class="region">TX</abbr> 
-						<span class="postal-code">78704</span> 
-						<span class="bull">•</span> 
-					</span>
-					
-					<a href="tel:1-512-961-6519" class="tel">
-						<span class="type">Phone:</span> <span class="value">512-961-6519</span>
-					</a> 
-					<span class="bull">•</span> 
-					
-					<a href="tel:1-866-272-5060" class="tel">
-						<span class="type">Fax:</span> <span class="value">866-272-5060</span>
-					</a> 
-					<span class="bull">•</span> 
-					
-					<a href="http://maps.google.com/maps/place?q=austin+pets+alive&cid=5826252151192168523" title="" rel "bookmark" onclick="pageTracker._trackPageview(&#39;/outgoing/maps.google.com/maps/place?q=austin+pets+alive_cid=5826252151192168523&amp;referer=http%3A%2F%2Fwww.austinpetsalive.org%2Fabout%2Fprograms%2Fozzysteam%2F&#39;);">See Us on a Map</a>
-				</div>
-			</div>
+		<footer id="apa-footer">
+			<script src="./js/apa-footer.js"></script>
 		</footer>
 	</body>
 </html>

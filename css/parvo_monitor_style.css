@@ -1,0 +1,38 @@
+#parvo_monitor_title_div
+{
+	margin: 0 0 0 170px;
+	font-family: Georgia,serif;
+	font-size: 1.836363636em;
+	text-transform: lowercase;
+	color: #EDF3D6;
+	line-height: 59px;
+	padding: 0 11px;
+}
+#banner_dark
+{
+	width:70em;
+	height:24.4em;
+	border-top:3.5em solid transparent;
+	z-index: 1;
+}
+#parvo_monitor_content
+{
+	width: 70em;
+	padding:2em 0; 
+	float: left;
+	color: #EDF3D6;
+}
+#parvo_monitor_header
+{
+	background-color: #646464;
+}
+#bg_div
+{
+	position: absolute;
+	top: 3.5em;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 980px;
+	background-color: #4D4D4D;
+	z-index: -1;
+}
