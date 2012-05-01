@@ -1,0 +1,32 @@
+svg {
+  font: 10px sans-serif;
+}
+
+text {
+	fill: #EDF3D6;
+}
+
+text.title {
+  font: 300 78px Helvetica Neue;
+  fill: #EDF3D6;
+}
+
+.rule line {
+  stroke: #EDF3D6;
+  stroke-opacity: .2;
+  shape-rendering: crispEdges;
+}
+
+.rule:first-child line {
+  stroke: #000;
+  stroke-opacity: 1;
+}
+
+rect {
+  fill-opacity: .6;
+  fill: #EDF3D6;
+}
+
+rect:first-child {
+  fill: #819E15;
+}
