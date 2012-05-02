@@ -1,3 +1,16 @@
 #chart {
-  font: 10px sans-serif;
+	font: 10px sans-serif;
+}
+g.xaxis {
+	stroke: #999;
+	stroke-width: 1px;;
+}
+g.yaxis {
+	stroke: #999;
+	stroke-width: 1px;
+}
+path.domain, path.range {
+	fill: none;
+	stroke: #999;
+	stroke-width: 2px;
 }

@@ -20,6 +20,7 @@ var area = d3.svg.area()
 
 var vis = d3.select("#chart")
   .append("svg")
+	.attr("class", "axis")
     .attr("width", width)
     .attr("height", height);
 
@@ -28,7 +29,22 @@ vis.selectAll("path")
   .enter().append("path")
     .style("fill", function() { return color(Math.random()); })
     .attr("d", area);
-
+	
+var x = d3.scale.linear().range([0,width]),
+	y = d3.scale.linear().range([height,0]),
+	xAxis = d3.svg.axis().scale(x),
+	yAxis = d3.svg.axis().scale(y).orient("right");
+	
+vis.append("svg:g")
+	.attr("class","xaxis")
+	.attr("transform","translate(0,2)")
+	.call(xAxis);
+	
+vis.append("svg:g")
+	.attr("class","yaxis")
+	.attr("transform","translate(0,2)")
+	.call(yAxis);
+	
 function transition() {
   d3.selectAll("path")
       .data(function() {
