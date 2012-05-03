@@ -1,0 +1,15 @@
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\bin\Debug\GenerateHTMLFromEmails.exe
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\bin\Debug\GenerateHTMLFromEmails.pdb
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\bin\Debug\OpenPop.dll
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\bin\Debug\OpenPop.pdb
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\bin\Debug\OpenPop.xml
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\obj\x86\Debug\GenerateHTMLFromEmails.exe
+C:\Users\khorecka\Desktop\OpenPop.NET 2.0.4\source\GenerateHTMLFromEmails\obj\x86\Debug\GenerateHTMLFromEmails.pdb
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\obj\x86\Debug\GenerateHTMLFromEmails.exe
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\obj\x86\Debug\GenerateHTMLFromEmails.pdb
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\bin\Debug\GenerateHTMLFromEmails.exe
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\bin\Debug\GenerateHTMLFromEmails.pdb
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\bin\Debug\OpenPop.pdb
+C:\Users\khorecka\Desktop\APA Parvo Puppy Monitor\APA Parvo Puppy Monitor\js\statistics\email_monitor\GenerateHTMLFromEmails\bin\Debug\OpenPop.xml
