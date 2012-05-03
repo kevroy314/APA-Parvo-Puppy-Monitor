@@ -22,8 +22,11 @@ namespace GenerateHTMLFromEmails
         private static bool monitorRunning = true;
         private static bool monitorQuit = false;
         private static int monitorCount = 0;
+        private static int outfileHeaderLength = 68;
+        private static int outfileFooterLength = 15;
         static void Main(string[] args)
         {
+            ReadCurrentPageStatus();
             System.Threading.Thread monitorDaemon = new System.Threading.Thread(new System.Threading.ThreadStart(MonitorMailbox));
             monitorDaemon.Start();
             Console.ReadLine();
@@ -42,6 +45,13 @@ namespace GenerateHTMLFromEmails
                 System.Threading.Thread.Sleep(1000);
             }
             monitorQuit = true;
+        }
+        private static void ReadCurrentPageStatus()
+        {
+            StreamReader reader = new StreamReader("data.js");
+            string document = reader.ReadToEnd().Replace(" \\", "").Remove(0, outfileHeaderLength);
+            document = document.Remove(document.Length - outfileFooterLength, outfileFooterLength);
+            reader.Close();
         }
         private static void GetMessages()
         {
@@ -87,7 +97,7 @@ namespace GenerateHTMLFromEmails
                 string imageFilename = "";
                 if (attachments.Count > 0)
                 {
-                    attachments[0].Save(new FileInfo(attachments[0].FileName));
+                    attachments[0].Save(new FileInfo("..\\..\\..\\..\\..\\..\\images\\"+attachments[0].FileName));
                     imageFilename = attachments[0].FileName;
                 }
 
@@ -120,9 +130,20 @@ namespace GenerateHTMLFromEmails
         }
         private static void PrintDogDataToHTML()
         {
-            StreamWriter writer = new StreamWriter("data.htm", true);
+            FileStream writer = new FileStream("data.js", FileMode.Open);
             for (int i = 0; i < dogs.Count; i++)
-                writer.Write(dogs[i].toHTML());
+            {
+                writer.Seek(-outfileFooterLength, SeekOrigin.End);
+                byte[] writeBytes = Encoding.ASCII.GetBytes(dogs[i].toHTML());
+                writer.Write(writeBytes,0,writeBytes.Length);
+            }
+            string footer = "\"+\"</tbody>\")};";
+            byte[] footerBytes = Encoding.ASCII.GetBytes(footer);
+            if(dogs.Count>0)
+                writer.Seek(0, SeekOrigin.End);
+            else
+                writer.Seek(-outfileFooterLength, SeekOrigin.End);
+            writer.Write(footerBytes, 0, footerBytes.Length);
             writer.Close();
             messages.Clear();
             dogs.Clear();
@@ -147,7 +168,7 @@ namespace GenerateHTMLFromEmails
         }
         public string toHTML()
         {
-            string returnVal = "<tr>\r\n\t<td>" + sTime.ToString("yyyy-MM-dd HH:mm") + "</td>\r\n\t<td>today</td>\r\n\t<td>" + n + "</td>\r\n\t<td><img src=\"" + iFilename + "\" width=50 height=50></img></br>" + desc + "</td>\r\n\t<td></td>\r\n\t<td>&nbsp;</td>\r\n\t<td>30</td>\r\n\t<td>" + f + "</td>\r\n\t<td></td>\r\n</tr>\r\n";
+            string returnVal = "\"+\r\n\"<tr>\"+\r\n\t\"<td>\"+\r\n\t\"" + sTime.ToString("yyyy-MM-dd HH:mm") + "</td>\"+\r\n\t\"<td>today</td>\"+\r\n\t\"<td>" + n + "</td>\"+\r\n\t\"<td><img src=\'./images/" + iFilename + "\' width=50 height=50></img></br>" + desc + "</td>\"+\r\n\t\"<td></td>\"+\r\n\t\"<td>&nbsp;</td>\"+\r\n\t\"<td>30</td>\"+\r\n\t\"<td>" + f + "</td>\"+\r\n\t\"<td></td>\"+\r\n\"</tr>";
             returnVal = returnVal.Replace("  ", "").Replace(" <", "<").Replace("> ", ">");
             return returnVal;
         }
