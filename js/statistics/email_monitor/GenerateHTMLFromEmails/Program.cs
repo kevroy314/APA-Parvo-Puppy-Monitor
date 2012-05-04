@@ -22,14 +22,24 @@ namespace GenerateHTMLFromEmails
         private static bool monitorRunning = true;
         private static bool monitorQuit = false;
         private static int monitorCount = 0;
-        private static int outfileHeaderLength = 68;
-        private static int outfileFooterLength = 15;
+        private static string filename = "data.json";
+        private static string header = "[\r\n\t{\r\n\t\t" +
+		                               "\"id\": \"Puppies\",\r\n\t\t" +
+		                               "\"title\": \"Parvo Puppies\",\r\n\t\t" +
+		                               "\"focus_date\": \"2012-5-4 12:00\",\r\n\t\t" +
+		                               "\"initial_zoom\": \"16\",\r\n\t\t" +
+		                               "\"size_importance\": \"true\",\r\n\t\t" +
+		                               "\"events\":\r\n\t\t" +
+		                               "[";
+        private static string footer = "\r\n\t\t]\r\n\t}\r\n]";
         static void Main(string[] args)
         {
+            Console.SetWindowSize(40, 8);
             ReadCurrentPageStatus();
             System.Threading.Thread monitorDaemon = new System.Threading.Thread(new System.Threading.ThreadStart(MonitorMailbox));
             monitorDaemon.Start();
             Console.ReadLine();
+            Console.WriteLine("Waiting for iteration to finish...");
             monitorRunning = false;
             while (!monitorQuit) System.Threading.Thread.Sleep(100);
             Console.WriteLine("Monitor Stopped, Quitting...");
@@ -48,9 +58,9 @@ namespace GenerateHTMLFromEmails
         }
         private static void ReadCurrentPageStatus()
         {
-            StreamReader reader = new StreamReader("data.js");
-            string document = reader.ReadToEnd().Replace(" \\", "").Remove(0, outfileHeaderLength);
-            document = document.Remove(document.Length - outfileFooterLength, outfileFooterLength);
+            StreamReader reader = new StreamReader(filename);
+            string document = reader.ReadToEnd().Replace(" \\", "").Remove(0, header.Length);
+            document = document.Remove(document.Length - footer.Length, footer.Length);
             reader.Close();
         }
         private static void GetMessages()
@@ -130,19 +140,18 @@ namespace GenerateHTMLFromEmails
         }
         private static void PrintDogDataToHTML()
         {
-            FileStream writer = new FileStream("data.js", FileMode.Open);
+            FileStream writer = new FileStream(filename, FileMode.Open);
             for (int i = 0; i < dogs.Count; i++)
             {
-                writer.Seek(-outfileFooterLength, SeekOrigin.End);
+                writer.Seek(-footer.Length, SeekOrigin.End);
                 byte[] writeBytes = Encoding.ASCII.GetBytes(dogs[i].toHTML());
                 writer.Write(writeBytes,0,writeBytes.Length);
             }
-            string footer = "\"+\"</tbody>\")};";
             byte[] footerBytes = Encoding.ASCII.GetBytes(footer);
             if(dogs.Count>0)
                 writer.Seek(0, SeekOrigin.End);
             else
-                writer.Seek(-outfileFooterLength, SeekOrigin.End);
+                writer.Seek(-footer.Length, SeekOrigin.End);
             writer.Write(footerBytes, 0, footerBytes.Length);
             writer.Close();
             messages.Clear();
@@ -159,16 +168,27 @@ namespace GenerateHTMLFromEmails
         private string desc;
         public DogData(string imageFilename, string name, DateTime startTime, DateTime endTime, string from, string description)
         {
-            iFilename = imageFilename;
-            n = name;
+            iFilename = imageFilename.Trim();
+            n = name.Trim(); ;
             sTime = startTime;
             eTime = endTime;
-            f = from;
-            desc = description;
+            f = from.Trim();
+            desc = description.Trim();
         }
         public string toHTML()
         {
-            string returnVal = "\"+\r\n\"<tr>\"+\r\n\t\"<td>\"+\r\n\t\"" + sTime.ToString("yyyy-MM-dd HH:mm") + "</td>\"+\r\n\t\"<td>today</td>\"+\r\n\t\"<td>" + n + "</td>\"+\r\n\t\"<td><img src=\'./images/" + iFilename + "\' width=50 height=50></img></br>" + desc + "</td>\"+\r\n\t\"<td></td>\"+\r\n\t\"<td>&nbsp;</td>\"+\r\n\t\"<td>30</td>\"+\r\n\t\"<td>" + f + "</td>\"+\r\n\t\"<td></td>\"+\r\n\"</tr>";
+            string startTimeString = sTime.ToString("yyyy-MM-dd HH:mm");
+            string endTimeString = "today";//eTime.ToString("yyyy-MM-dd HH:mm");
+            string idString = "com.apaparvolog.event-"+startTimeString+n;
+            string descString = "<img src=\'./images/" + iFilename + "\' width=50 height=50></img></br>" + desc;
+            string importanceString = "30";
+            string returnVal = ",\r\n\t\t\t{\r\n\t\t\t\t\"id\": \"" + idString + 
+                               "\",\r\n\t\t\t\t\"startdate\": \"" + startTimeString + 
+                               "\",\r\n\t\t\t\t\"enddate\": \"" + endTimeString + 
+                               "\",\r\n\t\t\t\t\"title\": \"" + n + 
+                               "\",\r\n\t\t\t\t\"description\": \"" + descString + 
+                               "\",\r\n\t\t\t\t\"importance\": \"" + importanceString + 
+                               "\",\r\n\t\t\t\t\"link\": \"" + f + "\"\r\n\t\t\t}";
             returnVal = returnVal.Replace("  ", "").Replace(" <", "<").Replace("> ", ">");
             return returnVal;
         }

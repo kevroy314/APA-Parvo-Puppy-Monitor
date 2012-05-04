@@ -1,0 +1,182 @@
+[
+	{
+		"id": "Puppies",
+		"title": "Parvo Puppies",
+		"focus_date": "2012-5-4 12:00",
+		"initial_zoom": "12",
+		"events":
+		[
+			{
+				"id": "com.apaparvolog.event-2012-04-30 12:00 Buttons",
+				"startdate": "2012-04-30",
+				"enddate": "2012-05-04",
+				"title": "Buttons",
+				"description": "<img src='./images/dog_buttons.gif' width=50 height=50></img></br>He was the dog of a small blond girl with incredibly good luck!",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/List_of_Animaniacs_characters#Buttons_and_Mindy"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-01 12:00 Astro",
+				"startdate": "2012-05-01",
+				"enddate": "2012-05-09",
+				"title": "Astro",
+				"description": "<img src='./images/dog_astro.jpg' width=50 height=50></img></br>He's from the future!",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/List_of_The_Jetsons_characters#Astro"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-02 12:00 Blue",
+				"startdate": "2012-05-02",
+				"enddate": "2012-05-12",
+				"title": "Blue",
+				"description": "<img src='./images/dog_blue.jpg' width=50 height=50></img></br>He was a clue horder. He truely believed all the clues belonged to him.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Blue's_Clues"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-10 12:00 Brian",
+				"startdate": "2012-05-10",
+				"enddate": "2012-05-14",
+				"title": "Brian",
+				"description": "<img src='./images/dog_brian.jpg' width=50 height=50></img></br>Super pretentious, Brian is only really interesting in the context of his friend Stewie.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Brian_Griffin"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-02 12:00 Clifford",
+				"startdate": "2012-05-02",
+				"enddate": "2012-05-14",
+				"title": "Clifford",
+				"description": "<img src='./images/dog_astro.jpg' width=50 height=50></img></br>The runt of the liter, he grew to be 25 feet tall (with hilarious consequences)!",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Clifford_the_Big_Red_Dog"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 12:00 Deputy Dawg",
+				"startdate": "2012-05-04",
+				"enddate": "2012-05-08",
+				"title": "Deputy Dawg",
+				"description": "<img src='./images/dog_deputy-dawg.jpg' width=50 height=50></img></br>Also known as John Ritter, he kept the peace in Mississipi.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Deputy_Dawg"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-16 12:00 Dino",
+				"startdate": "2012-05-16",
+				"enddate": "2012-05-31",
+				"title": "Dino",
+				"description": "<img src='./images/dog_dino.jpg' width=50 height=50></img></br>Probably not technically a dog.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Dino_(The_Flintstones)"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-07 12:00 Droopy",
+				"startdate": "2012-05-07",
+				"enddate": "2012-05-20",
+				"title": "Droopy",
+				"description": "<img src='./images/dog_droopy-dog.jpg' width=50 height=50></img></br>Always knew how to look on the bright side of life.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Droopy"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-09 12:00 Goofy",
+				"startdate": "2012-05-09",
+				"enddate": "2012-05-17",
+				"title": "Goofy",
+				"description": "<img src='./images/dog_goofy.jpg' width=50 height=50></img></br>He's goofy. He also has a son, Max, who frequently 'shouts out loud' in an attempt to 'stand out above the crowd,' but subsequently only bothers the neighbors.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Goofy"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-15 12:00 Gromit",
+				"startdate": "2012-05-15",
+				"enddate": "2012-05-28",
+				"title": "Gromit",
+				"description": "<img src='./images/dog_gromit.jpg' width=50 height=50></img></br>Loves cheese. Possibly mute (maybe a practicing mime).",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Wallace_and_Gromit"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-18 12:00 Santa's Little Helper",
+				"startdate": "2012-05-18",
+				"enddate": "2012-06-01",
+				"title": "Santa's Little Helper",
+				"description": "<img src='./images/dog_santas-little-helper.jpg' width=50 height=50></img></br>Rescued by the Simpson family, he somehow stayed alive despite incredible abuse in order to experience small moments of love and camera time.",
+				"importance": "10",
+				"link": "http://en.wikipedia.org/wiki/Santa's_Little_Helper"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-02 12:00 Test",
+				"startdate": "2012-05-02",
+				"enddate": "2012-06-04",
+				"title": "Test",
+				"description": "<img src='./images/dog_santas-little-helper.jpg' width=50 height=50></img></br>Test",
+				"importance": "10",
+				"link": "http://www.google.com/"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:12Me!",
+				"startdate": "2012-05-04 14:12",
+				"enddate": "today",
+				"title": "Me!",
+				"description": "<img src='./images/IMG_7529.jpg' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:12Space Ship",
+				"startdate": "2012-05-04 14:12",
+				"enddate": "today",
+				"title": "Space Ship",
+				"description": "<img src='./images/Backgrounds_16711.png' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:12Too Damn High",
+				"startdate": "2012-05-04 14:12",
+				"enddate": "today",
+				"title": "Too Damn High",
+				"description": "<img src='./images/18138992.jpeg' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:13Planet",
+				"startdate": "2012-05-04 14:13",
+				"enddate": "today",
+				"title": "Planet",
+				"description": "<img src='./images/Backgrounds_11017.png' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:13All Day",
+				"startdate": "2012-05-04 14:13",
+				"enddate": "today",
+				"title": "All Day",
+				"description": "<img src='./images/All_Day_-_Album_Cover.jpg' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:14Danny",
+				"startdate": "2012-05-04 14:14",
+				"enddate": "today",
+				"title": "Danny",
+				"description": "<img src='./images/20120414_135634.jpg' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			},
+			{
+				"id": "com.apaparvolog.event-2012-05-04 14:14Working!",
+				"startdate": "2012-05-04 14:14",
+				"enddate": "today",
+				"title": "Working!",
+				"description": "<img src='./images/20120504_141423.jpg' width=50 height=50></img></br>None.",
+				"importance": "10",
+				"link": "2816823164@mms.att.net"
+			}
+		]
+	}
+]
